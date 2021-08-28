@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="FlightSimulatorApp.ControllersPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp"
+             xmlns:uc="clr-namespace:FlightSimulatorApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label x:Name="joy_lbl" Grid.Column="0" Grid.Row="0" Content="Elevator: 0 Rudder: 0" Margin="0 10 0 0" />
+        <uc:Joystick x:Name="Stick" Grid.Column="0" Grid.Row="0" Margin="10 -20 10 10" JoystickMove="Joystick_JoystickMove" />
+        <Label x:Name="th_lbl" Grid.Column="1" Content="Throttle: 0" Margin="0 10 0 0" />
+        <Slider x:Name="VertSld" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_Vertical_ValueChanged" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Width="176.47" HorizontalAlignment="Left" Margin="0.2,120,0,171" Minimum="0" Maximum="1">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Label x:Name="ail_lbl" Grid.Row="1" Content="Aileron: 0" Margin="80 -50 0 0" />
+        <Slider x:Name="HorSld" ValueChanged="Slider_Horizontal_ValueChanged" Width="235.29" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,-30,0,0" Minimum="-1" Maximum="1"/>
+    </Grid>
+</UserControl>

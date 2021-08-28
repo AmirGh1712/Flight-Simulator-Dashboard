@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="FlightSimulatorApp.IndicatorsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp"
+             xmlns:uc="clr-namespace:FlightSimulatorApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Grid.Column="1" Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <TextBlock Text="Indicated Heading Deg" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=IndicatedHeadingDeg}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <TextBlock Text="GPS Indicated Vertical Speed" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=GPSIndicatedVerticalSpeed}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="0">
+            <TextBlock Text="GPS Indicated Ground Speed [kt]" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=GPSIndicatedGroundSpeedKt}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="0">
+            <TextBlock Text="Airspeed Indicator Indicated Speed [kt]" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=AirspeedIndicatorIndicatedSpeedKt}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <TextBlock Text="GPS Indicated Altitude [ft]" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=GPSIndicatedAltitudeFt}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Text="Attitude Indicator Internal Roll Deg" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=AttitudeIndicatorInternalRollDeg}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <TextBlock Text="Attitude Indicator Internal Pitch Deg" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=AttitudeIndicatorInternalPitchDeg}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="1">
+            <TextBlock Text="Altimeter Indicated Altitude [ft]" TextWrapping="WrapWithOverflow" FontWeight="Bold" TextAlignment="Center" />
+            <TextBlock Text="{Binding Path=AltimeterIndicatedAltitudeFt}" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</UserControl>
